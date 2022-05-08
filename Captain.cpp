@@ -12,4 +12,8 @@ namespace coup {
     void Captain::block(Player &player) {
 
     }
+
+    Captain::Captain(Game &game, string name) : Player(game, name) {
+        this->game->num_players++;
+    }
 }

@@ -10,5 +10,6 @@ namespace coup{
 
     Assassin::Assassin(Game &game, string name) : Player(game, name){
         this->min_coup = 3;
+        this->game->num_players++;
     }
 }

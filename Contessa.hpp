@@ -5,7 +5,7 @@ using namespace std;
 namespace coup{
     class Contessa: public Player{
     public:
-        Contessa(Game &game, string name): Player(game,move(name)){}
+        Contessa(Game &game, string name);
         string role() const override{ return "Contessa";}
         void block(Player &player);
     };
