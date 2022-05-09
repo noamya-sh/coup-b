@@ -7,6 +7,7 @@ namespace coup {
         player1._coin--;
         player2._coin++;
         this->last_act = TRANSFER;
+        game->tur++;
     }
 
     void Ambassador::block(Player &player) {
@@ -15,15 +16,19 @@ namespace coup {
         }
         if (player.last_act == STEAL1){
             player._coin-=1;
+            player.stolen->_coin+=1;
         }
         else {
             player._coin-=2;
+            player.stolen->_coin+=2;
         }
         player.blocked = true;
+        game->tur++;
     }
 
 
     Ambassador::Ambassador(Game &game, string name) : Player(game, name) {
         this->game->num_players++;
+        this->game->ps.push_back(this);
     }
 }

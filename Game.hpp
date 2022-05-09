@@ -10,13 +10,15 @@ namespace coup{
     class Player;
     class Game{
     private:
-        string win;
-        string tur;
+        string win = "nothing";
+//        string tur;
 
 
     public:
+        size_t tur;
         int num_players = 0;
         vector<Player*> ps;
+//        vector<string> names;
         string turn();
         vector<Player*> players() const;
         string winner();

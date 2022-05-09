@@ -16,20 +16,21 @@ namespace coup{
     protected:
         Game* game;
 
-        int min_coup = 7;
-        string name;
-
     public:
         act last_act =START;
+        string name;
+        int min_coup = 7;
         int _coin;
         Player(Game &game, string name): game(&game),name(move(name)),_coin(0){}
         virtual string role() const=0;
         int coins() const { return this->_coin;};
+
         void income();
         void foreign_aid();
         virtual void coup(Player &player);
         bool blocked = false;
-
+        bool couped = false;
+        Player *stolen = nullptr;
     };
 }
 #endif
