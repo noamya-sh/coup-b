@@ -6,6 +6,7 @@ namespace coup {
         if (player.last_act != FOREIGN_AID){
             throw runtime_error("can't block.");
         }
+        player._coin-=2;
         player.blocked = true;
     }
 
