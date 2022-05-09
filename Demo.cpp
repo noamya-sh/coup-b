@@ -5,13 +5,13 @@
  * @since: 2022-02
  */
 
-#include "Player.hpp"
-#include "Duke.hpp"
-#include "Assassin.hpp"
-#include "Ambassador.hpp"
-#include "Captain.hpp"
-#include "Contessa.hpp"
-#include "Game.hpp"
+#include "sources/Player.hpp"
+#include "sources/Duke.hpp"
+#include "sources/Assassin.hpp"
+#include "sources/Ambassador.hpp"
+#include "sources/Captain.hpp"
+#include "sources/Contessa.hpp"
+#include "sources/Game.hpp"
 
 #include <exception>
 

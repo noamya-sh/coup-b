@@ -18,10 +18,11 @@ namespace coup{
         size_t tur;
         int num_players = 0;
         vector<Player*> ps;
-//        vector<string> names;
+        vector<string> names;
         string turn();
-        vector<Player*> players() const;
+        vector<string> players() const;
         string winner();
+        ~Game()= default;
 
     };
 }

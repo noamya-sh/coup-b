@@ -23,7 +23,7 @@ namespace coup {
         return this->win;
     }
 
-    vector<Player *> Game::players() const {
-        return this->ps;
+    vector<string> Game::players() const {
+        return this->names;
     }
 }

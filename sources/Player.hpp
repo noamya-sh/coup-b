@@ -15,22 +15,23 @@ namespace coup{
     class Player{
     protected:
         Game* game;
-
+        void check();
     public:
         act last_act =START;
         string name;
         int min_coup = 7;
         int _coin;
         Player(Game &game, string name): game(&game),name(move(name)),_coin(0){}
+        ~Player()= default;
         virtual string role() const=0;
         int coins() const { return this->_coin;};
-
         void income();
         void foreign_aid();
         virtual void coup(Player &player);
         bool blocked = false;
         bool couped = false;
         Player *stolen = nullptr;
+        Player *killed = nullptr;
     };
 }
 #endif

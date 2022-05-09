@@ -6,6 +6,7 @@ namespace coup{
     class Captain: public Player{
     public:
         Captain(Game &game, string name);
+        ~Captain()= default;
         string role() const override { return "Captain";}
         void steal(Player &player);
         void block(Player &player);
