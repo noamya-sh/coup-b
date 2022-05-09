@@ -21,5 +21,6 @@ namespace coup{
         this->min_coup = 3;
         this->game->num_players++;
         this->game->ps.push_back(this);
+        this->game->names.push_back(name);
     }
 }

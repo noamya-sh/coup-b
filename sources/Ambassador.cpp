@@ -22,13 +22,13 @@ namespace coup {
             player._coin-=2;
             player.stolen->_coin+=2;
         }
-        player.blocked = true;
-        game->tur++;
+        player.stolen = nullptr;
     }
 
 
     Ambassador::Ambassador(Game &game, string name) : Player(game, name) {
         this->game->num_players++;
         this->game->ps.push_back(this);
+        this->game->names.push_back(name);
     }
 }

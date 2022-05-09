@@ -31,7 +31,7 @@ namespace coup{
         bool blocked = false;
         bool couped = false;
         Player *stolen = nullptr;
-        Player *killed = nullptr;
+        Player *dead = nullptr;
     };
 }
 #endif

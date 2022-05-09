@@ -7,7 +7,6 @@ namespace coup {
             throw runtime_error("duke block only forign_aid.");
         }
         player._coin-=2;
-        player.blocked = true;
     }
 
     void Duke::tax() {
@@ -19,5 +18,6 @@ namespace coup {
     Duke::Duke(Game &game, string name) : Player(game, name) {
         this->game->num_players++;
         this->game->ps.push_back(this);
+        this->game->names.push_back(name);
     }
 }

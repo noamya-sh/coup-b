@@ -12,7 +12,7 @@ namespace coup {
     }
 
     string Game::winner() {
-        if (num_players > 1){
+        if (num_players != 1){
             throw runtime_error("no exist winner");
         }
         for (size_t i = 0; i < ps.size(); ++i) {
