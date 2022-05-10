@@ -4,6 +4,12 @@
 using namespace std;
 namespace coup {
     void Ambassador::transfer(Player &player1, Player &player2) {
+        if(game->ps.size()>6){
+            throw runtime_error("too much players");
+        }
+        if (player1._coin <= 0){
+            throw runtime_error("not enough coins");
+        }
         player1._coin--;
         player2._coin++;
         this->last_act = TRANSFER;

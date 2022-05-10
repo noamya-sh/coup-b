@@ -26,4 +26,8 @@ namespace coup {
     vector<string> Game::players() const {
         return this->names;
     }
+
+    void Game::run_game() {
+        this->run = true;
+    }
 }

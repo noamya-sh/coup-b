@@ -7,12 +7,21 @@ namespace coup{
         if (this->coins() > 7){
             Player::coup(player);
         }
-        else if (this->coins() > 3){
+        else if (this->coins() >= 3){
+            if(player.couped){
+                throw invalid_argument{"this player already deposed"};
+            }
+            this->dead = &player;
+            player.couped = true;
+            this->game->names.erase(
+                    std::remove(this->game->names.begin(), this->game->names.end(),
+                                player.name),this->game->names.end());
             this->last_act = COUP3;
-
+            this->_coin-=3;
+            this->game->num_players--;
         }
         else{
-            throw runtime_error("There is not enough money");
+            throw runtime_error("There is not enough coins");
         }
         game->tur++;
     }

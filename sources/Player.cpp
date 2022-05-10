@@ -10,6 +10,7 @@ namespace coup{
         if(this->game->ps.size()>6){
             throw runtime_error{"too much players"};
         }
+        game->run_game();
         if(this->game->turn()!= this->name){
             throw runtime_error("not your turn");
         }
@@ -35,7 +36,11 @@ namespace coup{
         }
         player.couped = true;
         game->num_players--;
+        this->game->names.erase(
+                std::remove(this->game->names.begin(), this->game->names.end(),
+                            player.name),this->game->names.end());
         this->last_act = COUP7;
+        this->_coin-=7;
         this->dead = &player;
         this->game->tur++;
         return;
@@ -46,5 +51,9 @@ namespace coup{
         this->_coin++;
         this->last_act = INCOME;
         this->game->tur++;
+    }
+
+    Player::Player(Game &game, string name) :game(&game),name(name),_coin(0){
+
     }
 }

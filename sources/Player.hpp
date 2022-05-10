@@ -21,7 +21,7 @@ namespace coup{
         string name;
         int min_coup = 7;
         int _coin;
-        Player(Game &game, string name): game(&game),name(move(name)),_coin(0){}
+        Player(Game &game, string name);
         ~Player()= default;
         virtual string role() const=0;
         int coins() const { return this->_coin;};

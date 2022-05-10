@@ -6,6 +6,7 @@ namespace coup {
         if (player.last_act != COUP3){
             throw runtime_error("block only coup3");
         }
+        this->game->names.push_back( player.dead->name);
         player.dead->couped = false;
         player.dead = nullptr;
         this->game->num_players++;

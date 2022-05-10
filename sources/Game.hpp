@@ -22,8 +22,9 @@ namespace coup{
         string turn();
         vector<string> players() const;
         string winner();
+        bool run = false;
         ~Game()= default;
-
+        void run_game();
     };
 }
 #endif
