@@ -9,7 +9,7 @@ using namespace std;
 
 namespace coup{
     enum act{
-        START,INCOME,FOREIGN_AID,TAX,BLOCK,COUP3,COUP7,TRANSFER,STEAL1,STEAL2
+        START,INCOME,FOREIGN_AID,TAX,COUP3,COUP7,TRANSFER,STEAL1,STEAL2
     };
     class Game;
     class Player{
