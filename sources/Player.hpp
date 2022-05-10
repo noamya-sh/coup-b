@@ -19,7 +19,6 @@ namespace coup{
     public:
         act last_act =START;
         string name;
-        int min_coup = 7;
         int _coin;
         Player(Game &game, const string &name);
         ~Player()= default;

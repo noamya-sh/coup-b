@@ -29,7 +29,6 @@ namespace coup{
     }
 
     Assassin::Assassin(Game &game, const string &name) : Player(game, name){
-        this->min_coup = 3;
         this->game->insert(name, *this);
     }
 }
