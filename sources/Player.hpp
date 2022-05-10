@@ -21,7 +21,7 @@ namespace coup{
         string name;
         int min_coup = 7;
         int _coin;
-        Player(Game &game, string name);
+        Player(Game &game, string &name);
         ~Player()= default;
         virtual string role() const=0;
         int coins() const { return this->_coin;};
@@ -32,6 +32,7 @@ namespace coup{
         bool couped = false;
         Player *stolen = nullptr;
         Player *dead = nullptr;
+        int index;
     };
 }
 #endif

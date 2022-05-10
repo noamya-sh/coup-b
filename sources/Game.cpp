@@ -12,7 +12,7 @@ namespace coup {
     }
 
     string Game::winner() {
-        if (num_players != 1){
+        if (num_players != 1 || !this->run){
             throw runtime_error("no exist winner");
         }
         for (size_t i = 0; i < ps.size(); ++i) {
@@ -29,5 +29,11 @@ namespace coup {
 
     void Game::run_game() {
         this->run = true;
+    }
+
+    void Game::insert(string const &name, Player &p) {
+        this->num_players++;
+        this->ps.push_back(&p);
+        this->names.push_back(name);
     }
 }

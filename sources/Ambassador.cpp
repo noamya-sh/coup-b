@@ -2,12 +2,14 @@
 #include "Ambassador.hpp"
 #include <stdexcept>
 using namespace std;
+const int MAX_P = 6;
+const int ZERO = 6;
 namespace coup {
     void Ambassador::transfer(Player &player1, Player &player2) {
-        if(game->ps.size()>6){
+        if(game->ps.size()> MAX_P){
             throw runtime_error("too much players");
         }
-        if (player1._coin <= 0){
+        if (player1._coin <= ZERO){
             throw runtime_error("not enough coins");
         }
         player1._coin--;
@@ -32,9 +34,7 @@ namespace coup {
     }
 
 
-    Ambassador::Ambassador(Game &game, string name) : Player(game, name) {
-        this->game->num_players++;
-        this->game->ps.push_back(this);
-        this->game->names.push_back(name);
+    Ambassador::Ambassador(Game &game, string &name) : Player(game, name) {
+        this->game->insert(name, *this);
     }
 }

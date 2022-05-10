@@ -2,12 +2,15 @@
 #include "Player.hpp"
 #include "Game.hpp"
 const int MUST_COUP = 10;
+const int MAX_P = 6;
+const int MIN_P= 2;
+const int CAN_C = 7;
 namespace coup{
     void Player::check(){
-        if(this->game->ps.size()<2){
+        if(this->game->ps.size()<MIN_P){
             throw runtime_error{"no enough players"};
         }
-        if(this->game->ps.size()>6){
+        if(this->game->ps.size()>MAX_P){
             throw runtime_error{"too much players"};
         }
         game->run_game();
@@ -31,7 +34,7 @@ namespace coup{
         if(player.couped){
             throw invalid_argument{"this player already deposed"};
         }
-        if (this->_coin < 7){
+        if (this->_coin < CAN_C){
             throw runtime_error("can't possible.");
         }
         player.couped = true;
@@ -40,10 +43,9 @@ namespace coup{
                 std::remove(this->game->names.begin(), this->game->names.end(),
                             player.name),this->game->names.end());
         this->last_act = COUP7;
-        this->_coin-=7;
+        this->_coin-=CAN_C;
         this->dead = &player;
         this->game->tur++;
-        return;
     }
 
     void Player::income() {
@@ -53,7 +55,17 @@ namespace coup{
         this->game->tur++;
     }
 
-    Player::Player(Game &game, string name) :game(&game),name(name),_coin(0){
+    Player::Player(Game &game, string &name) {
+        if (game.run){
+            throw runtime_error("the game run");
+        }
+        if (game.num_players >= MAX_P){
+            throw runtime_error("too much players.");
+        }
+        this->index = game.ind++;
+        this->game = &game;
+        this->name = name;
+        this->_coin = 0;
 
     }
 }

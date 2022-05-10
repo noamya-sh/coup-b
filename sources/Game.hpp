@@ -25,6 +25,8 @@ namespace coup{
         bool run = false;
         ~Game()= default;
         void run_game();
+        void insert(string const &name,Player &p);
+        int ind = 0;
     };
 }
 #endif

@@ -4,10 +4,10 @@ using namespace std;
 namespace coup{
     class Ambassador: public Player{
     public:
-        Ambassador(Game &game, string name);
+        Ambassador(Game &game, string &name);
         ~Ambassador()= default;
         string role() const override { return "Ambassador";}
         void transfer(Player &player1, Player &player2);
-        void block(Player &player);
+        static void block(Player &player);
     };
 }
