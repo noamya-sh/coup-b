@@ -55,7 +55,7 @@ namespace coup{
         this->game->tur++;
     }
 
-    Player::Player(Game &game, string &name) {
+    Player::Player(Game &game, const string &name) {
         if (game.run){
             throw runtime_error("the game run");
         }

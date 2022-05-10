@@ -36,7 +36,7 @@ namespace coup {
         player.stolen = nullptr;
     }
 
-    Captain::Captain(Game &game, string &name) : Player(game, name) {
+    Captain::Captain(Game &game, const string &name) : Player(game, name) {
         this->game->insert(name, *this);
     }
 }

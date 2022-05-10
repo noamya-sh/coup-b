@@ -3,7 +3,7 @@
 #include <stdexcept>
 using namespace std;
 const int MAX_P = 6;
-const int ZERO = 6;
+const int ZERO = 0;
 namespace coup {
     void Ambassador::transfer(Player &player1, Player &player2) {
         if(game->ps.size()> MAX_P){
@@ -34,7 +34,7 @@ namespace coup {
     }
 
 
-    Ambassador::Ambassador(Game &game, string &name) : Player(game, name) {
+    Ambassador::Ambassador(Game &game, const string &name) : Player(game, name) {
         this->game->insert(name, *this);
     }
 }

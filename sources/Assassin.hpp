@@ -4,7 +4,7 @@ using namespace std;
 namespace coup{
     class Assassin: public Player{
     public:
-        Assassin(Game &game, string &name);
+        Assassin(Game &game, const string &name);
         ~Assassin()= default;
         string role() const override { return "Assassin";}
         virtual void coup(Player &player) override;

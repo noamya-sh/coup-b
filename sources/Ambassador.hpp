@@ -4,7 +4,7 @@ using namespace std;
 namespace coup{
     class Ambassador: public Player{
     public:
-        Ambassador(Game &game, string &name);
+        Ambassador(Game &game, const string &name);
         ~Ambassador()= default;
         string role() const override { return "Ambassador";}
         void transfer(Player &player1, Player &player2);

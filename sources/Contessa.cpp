@@ -12,7 +12,7 @@ namespace coup {
         this->game->num_players++;
     }
 
-    Contessa::Contessa(Game &game, string &name) : Player(game, name) {
+    Contessa::Contessa(Game &game, const string &name) : Player(game, name) {
         this->game->insert(name, *this);
     }
 }

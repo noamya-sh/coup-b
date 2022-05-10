@@ -15,7 +15,7 @@ namespace coup {
         game->tur++;
     }
 
-    Duke::Duke(Game &game, string &name) : Player(game, name) {
+    Duke::Duke(Game &game, const string &name) : Player(game, name) {
         this->game->insert(name, *this);
     }
 }
