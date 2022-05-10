@@ -32,3 +32,5 @@
 *.app
 demo
 test
+cmake-build-debug
+CMakeLists.txt
